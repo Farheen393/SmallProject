@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Emp xmlns="http://www.tibco.com/schema/ZUnitTest/Schema.xsd">
+    <FirstName>ABC</FirstName>
+    <LastName>XYZ</LastName>
+    <Age>45</Age>
+    <Designation>Architect</Designation>
+</Emp>

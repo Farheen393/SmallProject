@@ -1,0 +1,72 @@
+swagger: "2.0"
+info:
+  title: Employee API
+  description: This API creates a new employee in the system
+  version: 1.0.0
+host: localhost:8080
+basePath: /e1
+schemes:
+  - https
+consumes:
+  - application/json
+paths:
+ /employee:
+   post:
+     summary: Creates a new employee
+     parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+                $ref: '#/definitions/Employee'
+     responses:
+        201:
+          description: Created
+          
+        400:
+          description: Bad Request
+          schema:
+            type: object
+            items:
+              $ref: '#/definitions/Error'
+definitions:
+  Employee:
+    title: Root Type for Employee
+    description: The root of the Employee type's schema.
+    type: object
+    properties:
+      id:
+        format: int32
+        type: integer
+      FirstName:
+        type: string
+      LastName:
+        type: string
+      Age:
+        format: int32
+        type: integer
+      Title:
+        type: string
+    example:
+      {
+        "id": 1,
+        "FirstName": "ABC",
+        "LastName": "XYZ",
+        "Age": 45,
+        "Title": "Architect"
+      }
+  Error:
+    title: Error Message
+    description: Error Message
+    type: object
+    properties:
+      ErrorCode:
+        format: int32
+        type: integer
+      ErrorMsg:
+        type: string
+    example:
+      {
+        "ErrorCode": 400,
+        "ErrorMsg": "Bad Request"
+      }

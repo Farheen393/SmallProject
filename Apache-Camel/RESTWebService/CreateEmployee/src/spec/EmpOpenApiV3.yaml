@@ -1,0 +1,67 @@
+openapi: 3.0.1
+info:
+  title: Employee API
+  description: This API creates a new employee in the system
+    .
+  version: 1.0.0
+servers:
+  - url: https://localhost:8080/e1
+paths:
+  /employee:
+    post:
+      summary: Creates a new employee
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+        required: true
+      responses:
+        201:
+          description: Created
+          content: {}
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+      x-codegen-request-body-name: body
+components:
+  schemas:
+    Employee:
+      title: Root Type for Employee
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        FirstName:
+          type: string
+        LastName:
+          type: string
+        Age:
+          type: integer
+          format: int32
+        Title:
+          type: string
+      description: The root of the Employee type's schema.
+      example:
+        id: 1
+        FirstName: ABC
+        LastName: XYZ
+        Age: 45
+        Title: Engineer
+    Error:
+      title: Error Message
+      type: object
+      properties:
+        ErrorCode:
+          type: integer
+          format: int32
+        ErrorMsg:
+          type: string
+      description: Error Message
+      example:
+        ErrorCode: 400
+        ErrorMsg: Bad Request
