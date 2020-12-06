@@ -7,7 +7,8 @@ import org.apache.log4j.Logger;
 
 public class MyParseErrorProcessor implements Processor {
 
-    public void process(Exchange exchange) throws Exception {
+    public void process(Exchange exchange) throws Exception
+    {
         Logger LOGGER = Logger.getLogger(Exception.class);
         Exception exp = exchange.getProperty(Exchange.EXCEPTION_CAUGHT, Exception.class);
         LOGGER.error("Parse Exception Occurred while marshalling/unmarshalling xml/JSON:" + exp);

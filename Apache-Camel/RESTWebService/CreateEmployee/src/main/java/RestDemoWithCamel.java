@@ -7,6 +7,7 @@ import org.apache.camel.component.properties.PropertiesComponent;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.log4j.Logger;
 import rest.dsl.generated.EmpRESTDSL;
+import com.examples.Connections.*;
 
 public class RestDemoWithCamel {
 
@@ -24,6 +25,8 @@ public class RestDemoWithCamel {
             // add properties file location and set to context
             PropertiesComponent pc = new PropertiesComponent();
             pc.addLocation("classpath:application.properties");
+
+            //set jasypt to camel context
             pc.setPropertiesParser(jasypt);
             context.setPropertiesComponent(pc);
 
@@ -32,9 +35,12 @@ public class RestDemoWithCamel {
 
             // add JMS camel component
             context.addComponent("jms", emscomponent);
+
+            // add all routes to camel context
             context.addRoutes(new EmpRESTDSL());
             context.addRoutes(new AccountantRouteBuilder());
             context.addRoutes(new EngineerRouterBuilder());
+
             context.start();
             Thread.sleep(50000);
             context.stop();

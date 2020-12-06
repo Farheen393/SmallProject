@@ -1,0 +1,10 @@
+com\examples\processors\MyGenericErrorProcessor.class
+com\examples\processors\PostProcessor.class
+com\examples\routes\EngineerRouterBuilder.class
+com\examples\processors\MyParseErrorProcessor.class
+com\examples\routes\AccountantRouteBuilder.class
+RestDemoWithCamel.class
+io\swagger\client\model\Employee.class
+io\swagger\client\model\Error.class
+rest\dsl\generated\EmpRESTDSL.class
+com\examples\Connections\Connections.class
