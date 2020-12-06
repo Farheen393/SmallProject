@@ -24,7 +24,7 @@ This is an "Employee Use Case" and it performs the following tasks :
     ii)wireTap
  7.  JacksonDataFormat 
  
-    i)Marshall POJO to JSON and vice versa
+       i)Marshall POJO to JSON and vice versa
  8. camel-restdsl-openapi - Auto generate Camel REST DSL 
  
  # OpenAPI Specification 
@@ -39,7 +39,7 @@ This is an "Employee Use Case" and it performs the following tasks :
   Camel Jasypt encryption library is used to encrypt and decrypt sensitive information of an application
   
   The following command has been used to encrypt password of TIBCO JMS connection
-  -  java -jar camel-jasypt-3.4.3.jar -c encrypt -p secret -i <passowrd>
+  -  java -jar camel-jasypt-3.4.3.jar -c encrypt -p secret -i 'passowrd'
   
       Encrypted text: iWwq47eGLgyY/yhJbkQHTQ==
       
